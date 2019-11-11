@@ -7,31 +7,35 @@ public class _00_SortedArrayChecker {
 	//   The method returns true if the integer
 	//   array is in ascending order and false otherwise
 	static boolean intArraySorted(int[] array) {
-		int i = array.length;
-			if(array.length == i++) {
-				return true;
+		for(int h = 0; h < array.length-1; h++) {
+			System.out.println(h);
+			if(array[h] <= array[h+1]) {
+				System.out.println("g");
+
 			}
 			else {
 				return false;
 			}
 		}
-		
-	
+		return true;
+	}
 	//2. Write a static method called doubleArraySorted. 
 	//   This method takes in an array of doubles
 	//   and it returns a boolean.
 	//   The method returns true if the double
 	//   array is in ascending order and false otherwise
 	static boolean doubleArraySorted(double[] array) {
-		int f = array.length;
-		if(array.length == f++) {
-			return true;
+		for(int l = 0; l < array.length-1; l++) {
+			System.out.println(l);
+			if(array[l] <= array[l+1]) {
+			System.out.println("g");
 		}
 		else {
-		return false;
+			return false;
 		}
 	}
-	
+		return true;
+}
 	//3. Write a static method called charArraySorted. 
 	//   This method takes in an array of characters
 	//   and it returns a boolean.
@@ -39,15 +43,16 @@ public class _00_SortedArrayChecker {
 	//   array is in alphabetical order and false otherwise
 	//   (You can compare characters just like integers)
 	static boolean charArraySorted(char[] array) {
-		//figure out alphabetical
-		int j = array.length;
-		if(array.length == j--) {
-			return true;
+		for(int i = 0; i < array.length-1; i++) {
+			System.out.println(i);
+			if(array[i] <= array[i+1]) {
+				System.out.println("g");
+			}
+			else { 
+				return false;
+			}
 		}
-		else {
-		return false;
-		}
-		//note
+		return true;
 	}
 	
 	//4. Write a static method called stringArraySorted. 
@@ -57,10 +62,15 @@ public class _00_SortedArrayChecker {
 	//   array is in alphabetical order and false otherwise
 	//   (Use the compareTo(String) method)
 	static boolean stringArraySorted(String[] array) {
-		
-		//compareTo???
-		
-		return false;
-		
+		for(int f = 0; f < array.length-1; f++) {
+			System.out.println(f);
+			if(array[f].compareTo(array[f+1])>0) {
+				//System.out.println("g");
+		//	}
+			//else {
+				return false;
+			}
+		}
+		return true;
 	}
 }
