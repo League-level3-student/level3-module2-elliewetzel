@@ -13,6 +13,7 @@ public class MergeSorter extends Sorter {
 	@Override
 	void sort(int[] array, SortingVisualizer display) {
 		//20. call the mergeSort method with 0 and the length of the array minus one
+		mergeSort(array, 0, array.length-1, display);
 	}
 	
 	private void mergeSort(int[] array, int low, int high, SortingVisualizer display) {
@@ -21,47 +22,59 @@ public class MergeSorter extends Sorter {
 		//2. make an if statement that checks if low is less than high
 		//   and put the rest of the method inside of it
 		if(low<high) {
-			int middle = (low+high)/2;
+			int middle = (high+low)/2;
+			mergeSort(array,low,middle,display);
+			mergeSort(array,middle+1,high,display);
+			for(int i = low; i <=high;i++) {
+				e[i] = array[i];
+			}
+			int i = low;
+			int j = middle+1;
+			int k = low;
+			
+			while(i<=middle && j<=high) {
+				if(e[i]<=e[j]) {
+					array[k] = e[i];
+					i++;
+				}
+				else {
+					array[k] = e[j];
+					j++;
+				}
+				k++;
+			}
+		
+		while(i<=middle) {
+			array[k] = e[i];
+			k++;
+			i++;
+			display.updateDisplay();
 		}
 			//3. Create an integer called middle and set it 
 			//   equal to the half way point between low and high
-            
             //4. call the mergeSort method with low and middle
-           
             //5. call the mergeSort method with middle + 1 and high
-            
             //6. copy the elements from the array into the temporary array,
             //   but only the elements from low to high inclusive
-            
             //7. create three integers called i, j, and k and
             //   set them equal to low, middle + 1, and low respectively
-            
             //8. while i is less than or equal to middle
             //   and j is less than or equal to high
             
             	//9. if temp array at i is less than or equal 
             	//   to temp array at j	
-                
                     //10. set array at k equal to temp array at i
-                    
                     //11. increase i by 1
-                  
                 //13. else
-            
                     //14. set array at k equal to temp array at j
-                   
-                    //15. increase j by 1
-                 
+                    //15. increase j by 1              
                 //16. increase k by 1
-                
             
             //17. make a while loop that runs while i is less than or equal to middle
-            
             	//18. set array at k equal to temp array at i
-                
                 //19. increase k and i by 1
                
-            
+		}
         
 	}
 
