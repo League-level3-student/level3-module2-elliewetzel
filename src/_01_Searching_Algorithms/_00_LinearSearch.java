@@ -12,12 +12,10 @@ public class _00_LinearSearch {
 		int return1 = -1;
 		for(int i = 0; i < words.length; i++) {
 			if(words[i].equals(value)) {
-				return1 = i;
+				return i;
 				
 			}
-			/*else {
-				return -1;
-			}*/
+
 		}
 		return return1;
 	}
