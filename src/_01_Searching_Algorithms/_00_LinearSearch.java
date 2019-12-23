@@ -11,11 +11,10 @@ public class _00_LinearSearch {
 		//   If the value is not found in the array, return -1.
 		int return1 = -1;
 		for(int i = 0; i < words.length; i++) {
-			if(words[i].equals(value)) {
-				return i;
-				
+			if(words[i].contentEquals(value)) {
+				return1 = i;
+				return return1;
 			}
-
 		}
 		return return1;
 	}
