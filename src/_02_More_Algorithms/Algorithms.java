@@ -11,7 +11,6 @@ public class Algorithms {
 		}
 		return 0;
 	}
-
 	public static Object countPearls(List<Boolean> oysters) {
 		int h = 0;
 		for(int i = 0; i < oysters.size(); i++) {
@@ -21,7 +20,6 @@ public class Algorithms {
 		}
 		return h;
 	}
-
 	public static double findTallest(List<Double> peeps) {
 		double h = Integer.MIN_VALUE;
 		for(int i = 0; i < peeps.size(); i++) {
@@ -31,7 +29,6 @@ public class Algorithms {
 		}
 		return h;
 	}
-
 	public static Object findLongestWord(List<String> words) {
 		int length = 0;
 		String longestWord = "";
@@ -43,7 +40,6 @@ public class Algorithms {
 		}
 		return longestWord;
 	}
-	
 	public static Object containsSOS1(List<String> message1) {
 		boolean sos = false;
 		for(int i = 0; i < message1.size(); i++) {
@@ -53,7 +49,6 @@ public class Algorithms {
 		}
 		return sos;
 	}
-	
 	public static Object containsSOS(List<String> message2) {
 		boolean sos = false;
 		for(int i = 0; i < message2.size(); i++) {
@@ -64,22 +59,59 @@ public class Algorithms {
 		return sos;
 	}
 
-	public static List<String> sortScores(List<Double> results) {
+	public static List<Double> sortScores(List<Double> results) {
 		int score = 0;
-		if(score < results.get(i)) {
-			
-		}
-		
-		
-		
-		double j = Integer.MIN_VALUE;
-		for(int i = 0; i < results.size(); i++) {
-			if(results.get(i) > j) {
-				j = results.get(i);
+		while(score<results.size()) {
+			for(int i = 0; i < results.size()-1; i++) {
+				if(results.get(i) > results.get(i+1)) {
+				score = 0;
+				double switcher = results.get(i+1);
+				results.set(i+1,  results.get(i));
+				results.set(i, switcher);			
+				}
+				else {
+					score+=1;
+				}
 			}
 		}
-		return j;
+		return results;
 	}
+	public static Object sortDNA(List<String> unsortedSequences) {
+		int length = 0;
+		while (length < unsortedSequences.size()) {
+			for(int i = 0; i < unsortedSequences.size()-1; i++) {
+				if(unsortedSequences.get(i).length() > unsortedSequences.get(i+1).length()) {
+			length = 0;
+			String r = unsortedSequences.get(i+1);
+			unsortedSequences.set(i+1, unsortedSequences.get(i));
+			unsortedSequences.set(i, r);
+				}
+				else {
+				length =+1;
+				}
+			}
+		}
+		return unsortedSequences;
+	}
+	public static List<String> sortWords(List<String> words) {
+		int letter = 0;
+		while(letter < words.size()) {
+			for(int i = 0; i < words.size()-1; i++) {
+				if(words.get(i).compareTo(words.get(i+1))>= 0){
+					letter = 0;
+					String switcher = words.get(i);
+					words.set(i, words.get(i+1));
+					words.set(i+1, switcher);
+			}
+				else {
+					letter+=1;
+				}
+		}
+	}
+		return words;
+	}
+	
+	
 	
 	
 }
